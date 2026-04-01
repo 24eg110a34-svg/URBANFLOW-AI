@@ -1,33 +1,10 @@
-# CYBERABAD TRAFFIC NEXUS - Python Dependencies
-
-# Web Framework
+# URBANFLOW AI - Python Dependencies
 Flask==3.0.0
 flask-cors==4.0.0
 Werkzeug==3.0.1
-
-# Data Analysis & ML
 scikit-learn==1.4.0
 numpy==1.26.3
 pandas==2.1.4
 joblib==1.3.2
-
-# Visualization
-matplotlib==3.8.2
-
-# Streamlit Dashboard
-streamlit==1.30.0
-
-# Networking
 requests==2.31.0
-
-# Security
-cryptography==41.0.7
-
-# Natural Language Processing
-nltk==3.8.1
-
-# Additional Utilities
-python-dateutil==2.8.2
-
-# Deployment
 gunicorn==21.2.0
