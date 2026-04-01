@@ -28,3 +28,6 @@ nltk==3.8.1
 
 # Additional Utilities
 python-dateutil==2.8.2
+
+# Deployment
+gunicorn==21.2.0
