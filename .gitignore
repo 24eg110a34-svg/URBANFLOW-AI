@@ -33,12 +33,11 @@ server.log
 # OS
 .DS_Store
 Thumbs.db
-nul
 
 # Models
-models/*.pkl
-models/*.joblib
-models/*.h5
+*.pkl
+*.joblib
+*.h5
 
 # Environment
 .env
@@ -47,3 +46,5 @@ models/*.h5
 # Temp files
 *.tmp
 *.bak
+backup/
+nul

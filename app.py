@@ -69,7 +69,7 @@ except ImportError:
 NLP_ENABLED = False
 CV_ENABLED = False
 
-app = Flask(__name__, template_folder='templates', static_folder='static')
+app = Flask(__name__, template_folder='.', static_folder='.')
 app.secret_key = 'cyberabad_nexus_hyderabad'
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
