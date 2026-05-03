@@ -677,6 +677,196 @@
             border: 1px solid var(--border);
         }
 
+        /* FOOTER */
+        .footer {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 40px 24px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            color: var(--cyan);
+            margin-bottom: 10px;
+        }
+
+        .footer-section h4 {
+            font-size: 14px;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .footer-section p {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul li a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 12px;
+            transition: color 0.2s;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--cyan);
+        }
+
+        .footer-stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-stat {
+            text-align: center;
+        }
+
+        .footer-stat span:first-child {
+            display: block;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--cyan);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .footer-stat span:last-child {
+            font-size: 10px;
+            color: var(--muted);
+        }
+
+        .footer-tech {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-tech span {
+            padding: 4px 10px;
+            background: var(--dark);
+            border-radius: 20px;
+            font-size: 10px;
+            color: var(--muted);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p {
+            font-size: 11px;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+
+        /* NEWS SECTION */
+        .news-card {
+            display: flex;
+            gap: 16px;
+            padding: 16px;
+            background: var(--dark);
+            border-radius: 12px;
+            border-left: 4px solid var(--cyan);
+        }
+
+        .news-icon {
+            font-size: 32px;
+        }
+
+        .news-content h4 {
+            font-size: 14px;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .news-content p {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+
+        .news-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 10px;
+            color: var(--cyan);
+        }
+
+        /* CONTACT FORM */
+        .contact-info {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--muted);
+        }
+
+        .contact-info p {
+            font-size: 13px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            background: var(--dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-family: inherit;
+            resize: vertical;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--cyan);
+        }
+
+        /* Live Visitor Counter */
+        .visitor-counter {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            background: var(--card);
+            border: 1px solid var(--green);
+            border-radius: 12px;
+            padding: 10px 16px;
+            font-size: 11px;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .visitor-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 1s infinite;
+        }
+
         .qa-toggle {
             position: fixed;
             right: 20px;
@@ -1681,6 +1871,7 @@
             <button class="nav-tab" data-tab="alerts">🚨 Alerts</button>
             <button class="nav-tab" data-tab="visual3d">🌐 3D View</button>
             <button class="nav-tab" data-tab="history">📜 History</button>
+            <button class="nav-tab" data-tab="news">📰 News</button>
         </nav>
 
         <div class="header-right">
@@ -1690,6 +1881,7 @@
             <button class="header-btn" onclick="toggleTheme()" title="Toggle Theme" id="themeBtn">🌓</button>
             <button class="header-btn voice-btn" onclick="toggleVoice()" title="Voice Commands" id="voiceBtn">🎤</button>
             <button class="header-btn" onclick="openParkingModal()" title="Smart Parking">🅿️</button>
+            <button class="header-btn" onclick="openContactModal()" title="Contact">📧</button>
             <div class="stat-mini aqi-mini" id="aqi-display" onclick="showPollution()">
                 <span>🌿</span>
                 <span class="val" id="hdr-aqi">45</span>
@@ -1981,6 +2173,51 @@
                     <button class="modal-close" onclick="closeCctvModal()">&times;</button>
                 </div>
                 <div class="cctv-grid" id="cctv-feeds">
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT MODAL -->
+        <div id="contactModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>📧 Contact Us</h3>
+                    <button class="modal-close" onclick="closeContactModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="contact-info">
+                        <p>Have questions about URBANFLOW AI? We'd love to hear from you!</p>
+                    </div>
+                    <form id="contact-form" onsubmit="submitContact(event)">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" id="contact-name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="contact-email" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <select id="contact-subject">
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="collaboration">Collaboration</option>
+                                <option value="academic">Academic Purpose</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea id="contact-message" rows="4" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-predict">Send Message</button>
+                    </form>
+                    <div id="contact-success" style="display:none;padding:20px;text-align:center;color:var(--green);">
+                        <div style="font-size:48px;margin-bottom:10px;">✅</div>
+                        <h3>Message Sent!</h3>
+                        <p>Thank you for contacting us. We'll get back to you soon.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2448,6 +2685,65 @@
                 </div>
             </div>
         </div>
+
+        <!-- NEWS SECTION -->
+        <div id="tab-news" class="tab-content">
+            <div class="chart-card">
+                <div class="chart-header">
+                    <div class="chart-title">📰 Traffic News & Updates</div>
+                    <div class="panel-badge">LATEST</div>
+                </div>
+                <div id="news-container" style="display:flex;flex-direction:column;gap:16px;padding:10px;"></div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🚦 URBANFLOW AI</h3>
+                    <p>AI-Powered Smart Traffic Management System for Hyderabad</p>
+                    <div class="footer-stats">
+                        <div class="footer-stat">
+                            <span id="total-visitors">1,247</span>
+                            <span>Total Visitors</span>
+                        </div>
+                        <div class="footer-stat">
+                            <span id="total-predictions">5,892</span>
+                            <span>ML Predictions</span>
+                        </div>
+                        <div class="footer-stat">
+                            <span id="total-routes">1,234</span>
+                            <span>Routes Found</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#" onclick="switchTab('command')">Dashboard</a></li>
+                        <li><a href="#" onclick="switchTab('predict')">ML Prediction</a></li>
+                        <li><a href="#" onclick="switchTab('history')">Traffic History</a></li>
+                        <li><a href="#" onclick="openContactModal()">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About Project</h4>
+                    <p>Developed for University Session 8 Final Presentation</p>
+                    <p style="font-size:11px;color:var(--muted);">Hyderabad Traffic Management System</p>
+                    <div class="footer-tech">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>ML AI</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 URBANFLOW AI - Traffic Intelligence Dashboard. All rights reserved.</p>
+                <p>Built with ❤️ for Smarter Cities</p>
+            </div>
+        </footer>
     </main>
 
     <script>
@@ -2522,6 +2818,7 @@
                     if (btn.dataset.tab === 'peak') initPeakChart();
                     if (btn.dataset.tab === 'compare') populateCompareSelects();
                     if (btn.dataset.tab === 'history') { initHistoryChart(); updateSocialFeed(); }
+                    if (btn.dataset.tab === 'news') { initNewsSection(); }
                     setTimeout(() => map.invalidateSize(), 100);
                 });
             });
@@ -4401,6 +4698,72 @@ RECOMMENDATIONS
                 aqiDisplay.textContent = aqi;
             }
         }, 30000);
+
+        // CONTACT MODAL
+        function openContactModal() {
+            document.getElementById('contactModal').classList.add('active');
+            document.getElementById('contact-form').style.display = 'block';
+            document.getElementById('contact-success').style.display = 'none';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').classList.remove('active');
+        }
+
+        function submitContact(e) {
+            e.preventDefault();
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('contact-success').style.display = 'block';
+            
+            const visitors = parseInt(document.getElementById('total-visitors').textContent.replace(/,/g, ''));
+            document.getElementById('total-visitors').textContent = (visitors + 1).toLocaleString();
+        }
+
+        // NEWS SECTION
+        const NEWS_ITEMS = [
+            { icon: '🚦', title: 'New AI Traffic Signals Coming to HITEC City', desc: 'Hyderabad Traffic Police announces deployment of AI-powered adaptive signals in IT corridor by Q2 2026.', time: '2 hours ago', category: 'INFRASTRUCTURE' },
+            { icon: '🚇', title: 'Metro Extension to Gachibowli Approved', desc: 'Metro Blue Line extension approved from Raidurg to Gachibowli. Construction to begin in 2026.', time: '5 hours ago', category: 'TRANSIT' },
+            { icon: '🌧️', title: 'Rain Alert: Traffic Advisory for Tomorrow', desc: 'Heavy rainfall expected tomorrow. Traffic Police advise commuters to plan extra travel time.', time: '1 day ago', category: 'WEATHER' },
+            { icon: '🎓', title: 'URBANFLOW AI Demo at University Expo', desc: 'Student project showcasing AI traffic management system gains attention at tech expo.', time: '2 days ago', category: 'PROJECT' },
+            { icon: '🛣️', title: 'ORR Lane Expansion Completed', desc: 'Outer Ring Road now has 8 lanes between Shamshabad and Patancheru for smoother commute.', time: '3 days ago', category: 'INFRASTRUCTURE' },
+            { icon: '📊', title: 'Traffic Data Shows 15% Improvement', desc: 'Citywide traffic congestion down 15% compared to last year due to new signal timing.', time: '1 week ago', category: 'STATISTICS' }
+        ];
+
+        function initNewsSection() {
+            const container = document.getElementById('news-container');
+            if (!container) return;
+            
+            container.innerHTML = NEWS_ITEMS.map(news => `
+                <div class="news-card">
+                    <div class="news-icon">${news.icon}</div>
+                    <div class="news-content">
+                        <h4>${news.title}</h4>
+                        <p>${news.desc}</p>
+                        <div class="news-meta">
+                            <span>${news.category}</span>
+                            <span>${news.time}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // LIVE VISITOR COUNTER
+        let visitors = 1247;
+        let predictions = 5892;
+        let routes = 1234;
+
+        function updateStats() {
+            visitors++;
+            predictions += Math.floor(Math.random() * 3);
+            routes += Math.floor(Math.random() * 2);
+            
+            document.getElementById('total-visitors').textContent = visitors.toLocaleString();
+            document.getElementById('total-predictions').textContent = predictions.toLocaleString();
+            document.getElementById('total-routes').textContent = routes.toLocaleString();
+        }
+
+        setInterval(updateStats, 45000);
     </script>
     <style>
         .loader-spinner {
@@ -4429,5 +4792,16 @@ RECOMMENDATIONS
         }
     </style>
     <button class="qa-toggle" onclick="toggleQuickActions()">⚡</button>
+    
+    <div class="visitor-counter">
+        <div class="visitor-dot"></div>
+        <span><span id="live-visitors">1</span> online</span>
+    </div>
+
+    <script>
+        setInterval(() => {
+            document.getElementById('live-visitors').textContent = Math.floor(Math.random() * 50) + 10;
+        }, 5000);
+    </script>
 </body>
 </html>
